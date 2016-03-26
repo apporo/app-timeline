@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="<%- contextPath %>/assets/css/timeline.css">
+  </head>
+
+  <body>
+
+  <div><h1>History's timelines</h1></div>
+    <div id="timeline"></div>
+
+    <script src="<%- contextPath %>/assets/js/jquery.min.js"></script>
+    <script src="<%- contextPath %>/assets/js/timeline.js"></script>
+    <script>
+
+window.onload = function () {
+
+plays = <%- JSON.stringify(events, null, 2); %>;
+timelineData = {
+    headline: "Chronology of Shakespeare's Plays",
+    type: "default",
+    date: []
+};
+plays.forEach(function(play) {
+    var start = play.date;
+    var end = "";
+    if (play.date.indexOf("-") !== -1) {
+        var dates = play.date.split("-");
+        start = dates[0];
+        end = dates[1];
+    }
+    timelineData.date.push({
+        startDate: start,
+        endDate: end,
+        headline: play.play,
+        text: play.evidence,
+        tag: play.genre,
+        asset: {
+            media: play.media,
+            credit: play.credit,
+            caption: play.caption
+        }
+    });
+});
+timelineConfig = {
+        type:       'timeline',
+        width:      '100%',
+        height:     '580',
+        source:     {timeline: timelineData},
+        embed_id:   'timeline'
+};
+timelinejs = new VMM.Timeline('timeline','100%','580px');
+timelinejs.init(timelineConfig);
+
+}
+    </script>
+  </body>
+</html>

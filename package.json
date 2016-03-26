@@ -22,10 +22,12 @@
   "homepage": "https://github.com/apporo/app-timeline#readme",
   "peerDependencies": {
     "app-webserver": "^0.0.4",
-    "devebot": "^0.1.19"
+    "devebot": "^0.1.19",
+    "devebot-co-mongodb": "^0.0.1"
   },
   "dependencies": {
     "app-webserver": "^0.0.4",
-    "devebot": "^0.1.19"
+    "devebot": "^0.1.19",
+    "devebot-co-mongodb": "^0.0.1"
   }
 }
