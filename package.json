@@ -1,10 +1,10 @@
 {
   "name": "app-timeline",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha.0",
   "description": "Devebot application timeline layerware",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
@@ -21,12 +21,12 @@
   },
   "homepage": "https://github.com/apporo/app-timeline#readme",
   "peerDependencies": {
-    "app-webserver": "^0.0.4",
+    "app-webserver": "^0.0.5",
     "devebot": "^0.1.19",
     "devebot-co-mongodb": "^0.0.1"
   },
   "dependencies": {
-    "app-webserver": "^0.0.4",
+    "app-webserver": "^0.0.5",
     "devebot": "^0.1.19",
     "devebot-co-mongodb": "^0.0.1"
   }
