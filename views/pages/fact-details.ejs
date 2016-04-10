@@ -1,23 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="<%- contextPath %>/assets/css/timeline.css">
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<%- include('../partials/header.style.ejs') %>
+
+    <link rel="stylesheet" type="text/css" href="<%- contextPath %>/assets/htimeline/css/timeline.css">
+    <title><%- __('Historical Fact') %>: <%- fact.name %> | <%- __('HISTORICAL TIMELINE') %></title>
   </head>
 
   <body>
+<%- include('../partials/header.ejs') %>
 
-  <div><h1>History's timelines</h1></div>
+    <div><h1>History's timelines</h1></div>
     <div id="timeline"></div>
 
-    <script src="<%- contextPath %>/assets/js/jquery.min.js"></script>
-    <script src="<%- contextPath %>/assets/js/timeline.js"></script>
+<%- include('../partials/header.script.ejs') %>
+    <script src="<%- contextPath %>/assets/htimeline/js/timeline.js"></script>
     <script>
 
 window.onload = function () {
 
-plays = <%- JSON.stringify(events, null, 2); %>;
+plays = <%- JSON.stringify(fact.events, null, 2); %>;
 timelineData = {
     headline: "Chronology of Shakespeare's Plays",
     type: "default",

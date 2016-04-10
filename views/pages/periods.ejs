@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="<%- contextPath %>/assets/megamenu/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="<%- contextPath %>/assets/megamenu/css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="<%- contextPath %>/assets/vtimeline/css/style.css"> <!-- Resource style -->
+	<script src="<%- contextPath %>/assets/vtimeline/js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	<title><%- __('Historical Periods') %> | <%- __('HISTORICAL TIMELINE') %></title>
+</head>
+<body>
+	<%- include('../partials/header.ejs') %>
+
+	<main class="cd-main-content">
+	<section id="cd-timeline" class="cd-container">
+		<% periods.forEach(function(period) { %>
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="<%- contextPath %>/assets/vtimeline/img/cd-icon-picture.svg" alt="Picture">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2><%- period.title %></h2>
+				<p><%- period.description %></p>
+				<a href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- period.slug %>" class="cd-read-more">Xem</a>
+				<span class="cd-date"><%- period.period %></span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+		<% }); %>
+	</section> <!-- cd-timeline -->
+	</main>
+<script src="<%- contextPath %>/assets/megamenu/js/jquery-2.1.1.js"></script>
+<script src="<%- contextPath %>/assets/megamenu/js/jquery.menu-aim.js"></script> <!-- menu aim -->
+<script src="<%- contextPath %>/assets/megamenu/js/main.js"></script> <!-- Resource jQuery -->
+<script src="<%- contextPath %>/assets/vtimeline/js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

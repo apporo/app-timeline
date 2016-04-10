@@ -8,16 +8,27 @@ module.exports = {
           name: 'timeline'
         },
         cols: {
-          TOPIC: 'topic',
+          PERIOD: 'stage',
           EVENT: 'event',
-          TOPIC_EVENT: 'topic_event'
+          FACT: 'topic',
+          FACT_EVENT: 'topic_event',
+          FIGURE: 'figure',
+          FIGURE_EVENT: 'figure_event'
         }
       }
     }
   },
   plugins: {
     appTimeline: {
-      contextPath: '/timeline'
+      contextPath: '/timeline',
+      resourceSlugs: {
+        periods: 'thoi-ky-lich-su',
+        period: 'thoi-ky',
+        facts: 'su-kien-lich-su',
+        fact: 'su-kien',
+        figures: 'nhan-vat-lich-su',
+        figure: 'nhan-vat'
+      }
     }
   }
 };
