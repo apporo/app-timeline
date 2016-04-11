@@ -8,7 +8,7 @@ module.exports = {
           name: 'timeline'
         },
         cols: {
-          PERIOD: 'stage',
+          PERIOD: 'period',
           EVENT: 'event',
           FACT: 'topic',
           FACT_EVENT: 'topic_event',

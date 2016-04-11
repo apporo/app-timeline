@@ -5,6 +5,7 @@
 				<h2>Title</h2>
 				<a href="#0" class="cd-close">Close</a>
 				<ul class="cd-dropdown-content">
+					<li><a href="http://codyhouse.co/?p=748">Page 3</a></li>
 					<li class="has-children">
 						<a href="<%- contextPath %>/<%- resourceSlugs['periods'] %>"><%- __('Historical Periods') %></a>
 
@@ -27,19 +28,14 @@
 						<ul class="cd-dropdown-icons is-hidden">
 							<li class="go-back"><a href="#0">Menu</a></li>
 							<li class="see-all"><a href="<%- contextPath %>/<%- resourceSlugs['facts'] %>"><%- __('Browse all facts') %></a></li>
+							<% navigation.facts.forEach(function(fact) { %>
 							<li>
-								<a class="cd-dropdown-item item-1" href="http://codyhouse.co/?p=748">
-									<h3>Service #1</h3>
-									<p>This is the item description</p>
+								<a class="cd-dropdown-item item-1" href="<%- contextPath %>/<%- resourceSlugs['fact'] %>/<%- fact.slug %>">
+									<h3><%- fact.name %></h3>
+									<p><%- fact.description %></p>
 								</a>
 							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-2" href="http://codyhouse.co/?p=748">
-									<h3>Service #2</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
+							<% }); %>
 						</ul> <!-- .cd-dropdown-icons -->
 					</li> <!-- .has-children -->
 
@@ -48,12 +44,14 @@
 						<ul class="cd-dropdown-icons is-hidden">
 							<li class="go-back"><a href="#0">Menu</a></li>
 							<li class="see-all"><a href="<%- contextPath %>/<%- resourceSlugs['figures'] %>"><%- __('Browse all figures') %></a></li>
+							<% navigation.figures.forEach(function(figure) { %>
 							<li>
-								<a class="cd-dropdown-item item-1" href="http://codyhouse.co/?p=748">
-									<h3>Service #1</h3>
+								<a class="cd-dropdown-item item-1" href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>">
+									<h3><%- figure.name %></h3>
 									<p>This is the item description</p>
 								</a>
 							</li>
+							<% }); %>
 
 							<li>
 								<a class="cd-dropdown-item item-2" href="http://codyhouse.co/?p=748">
@@ -139,7 +137,6 @@
 
 					<li><a href="http://codyhouse.co/?p=748">Page 1</a></li>
 					<li><a href="http://codyhouse.co/?p=748">Page 2</a></li>
-					<li><a href="http://codyhouse.co/?p=748">Page 3</a></li>
 				</ul> <!-- .cd-dropdown-content -->
 			</nav> <!-- .cd-dropdown -->
 		</div> <!-- .cd-dropdown-wrapper -->
