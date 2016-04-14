@@ -28,6 +28,41 @@ module.exports = {
         fact: 'su-kien',
         figures: 'nhan-vat-lich-su',
         figure: 'nhan-vat'
+      },
+      resources: {
+        periods: {
+          slug: 'thoi-ky-lich-su'
+        },
+        period: {
+          slug: 'thoi-ky',
+          thumbnail: {
+            menuitem: {
+              width: 400,
+              height: 300
+            },
+            listview: {
+              width: 200,
+              height: 150
+            },
+            formview: {
+              width: 600,
+              height: 450
+            }
+          },
+          menuSubItemCount: 4
+        },
+        facts: {
+          slug: 'su-kien-lich-su'
+        },
+        fact: {
+          slug: 'su-kien'
+        },
+        figures: {
+          slug: 'nhan-vat-lich-su'
+        },
+        figure: {
+          slug: 'nhan-vat'
+        }
       }
     }
   }

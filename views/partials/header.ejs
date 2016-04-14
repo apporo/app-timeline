@@ -15,7 +15,11 @@
 							<% navigation.periods.forEach(function(period) { %>
 							<li>
 								<a class="cd-dropdown-item" href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- period.slug %>">
+									<% if (period.picture) { %>
+									<img src="<%- contextPath %>/../filestore/picture/<%- period.picture %>/<%- resources.period.thumbnail.menuitem.width %>/<%- resources.period.thumbnail.menuitem.height %>" alt="Period Image">
+									<% } else { %> 
 									<img src="<%- contextPath %>/assets/megamenu/img/img.png" alt="Period Image">
+									<% } %>
 									<h3><%- period.title %></h3>
 								</a>
 							</li>

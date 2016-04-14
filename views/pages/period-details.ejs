@@ -15,7 +15,30 @@
 <%- include('../partials/header.ejs') %>
 
 	<main class="cd-main-content">
+	<h1><%- period.title %></h1>
+	<div><%- period.description %></div>
+	<img src="/filestore/picture/<%- period.picture %>/600/450">
+
+	<% if (period.facts && period.facts.length > 0) { %>
+	<hr/>
+	<h1>Facts</h1>
+	<ul>
+		<% period.facts.forEach(function(fact) { %>
+		<li><a href="<%- contextPath %>/<%- resourceSlugs['fact'] %>/<%- fact.slug %>"><%- fact.name %></a></li>
+		<% }) %>
+	</ul>
+	<% } %>
+
+	<% if (period.figures && period.figures.length > 0) { %>
+	<hr/>
+	<h1>Figures</h1>
+	<ul>
+		<% period.figures.forEach(function(figure) { %>
+		<li><a href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>"><%- figure.name %></a></li>
+		<% }) %>
+	</ul>
 	</main>
+	<% } %>
 
 <%- include('../partials/header.script.ejs') %>
 </body>
