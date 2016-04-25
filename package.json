@@ -32,7 +32,6 @@
     "app-localization": "^0.0.1",
     "app-webserver": "^0.0.5",
     "devebot": "^0.1.20",
-    "devebot-co-mongoose": "^0.0.1",
-    "mongoose": "^4.4.12"
+    "devebot-co-mongoose": "^0.0.1"
   }
 }
