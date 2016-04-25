@@ -1,19 +1,11 @@
 module.exports = {
   bridges: {
-    timelineMongodbWrapper: {
-      mongodb: {
+    timelineMongooseWrapper: {
+      mongoose: {
         connection_options: {
           host: '127.0.0.1',
           port: '27017',
           name: 'timeline'
-        },
-        cols: {
-          PERIOD: 'period',
-          EVENT: 'event',
-          FACT: 'topic',
-          FACT_EVENT: 'topic_event',
-          FIGURE: 'figure',
-          FIGURE_EVENT: 'figure_event'
         }
       }
     }
@@ -27,7 +19,9 @@ module.exports = {
         facts: 'su-kien-lich-su',
         fact: 'su-kien',
         figures: 'nhan-vat-lich-su',
-        figure: 'nhan-vat'
+        figure: 'nhan-vat',
+        disclaimer: 'phu-nhan-chung',
+        aboutus: 've-chung-toi'
       },
       resources: {
         periods: {

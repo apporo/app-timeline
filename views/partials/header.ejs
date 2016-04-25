@@ -5,7 +5,7 @@
 				<h2>Title</h2>
 				<a href="#0" class="cd-close">Close</a>
 				<ul class="cd-dropdown-content">
-					<li><a href="http://codyhouse.co/?p=748">Page 3</a></li>
+					<li><a href="<%- contextPath %>"><%- __('Homepage') %></a></li>
 					<li class="has-children">
 						<a href="<%- contextPath %>/<%- resourceSlugs['periods'] %>"><%- __('Historical Periods') %></a>
 
@@ -29,7 +29,7 @@
 
 					<li class="has-children">
 						<a href="<%- contextPath %>/<%- resourceSlugs['facts'] %>"><%- __('Historical Facts') %></a>
-						<ul class="cd-dropdown-icons is-hidden">
+						<ul class="cd-dropdown-icons cd-dropdown-lines is-hidden">
 							<li class="go-back"><a href="#0">Menu</a></li>
 							<li class="see-all"><a href="<%- contextPath %>/<%- resourceSlugs['facts'] %>"><%- __('Browse all facts') %></a></li>
 							<% navigation.facts.forEach(function(fact) { %>
@@ -52,96 +52,25 @@
 							<li>
 								<a class="cd-dropdown-item item-1" href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>">
 									<h3><%- figure.name %></h3>
-									<p>This is the item description</p>
+									<p><%- figure.description %></p>
 								</a>
 							</li>
 							<% }); %>
-
-							<li>
-								<a class="cd-dropdown-item item-2" href="http://codyhouse.co/?p=748">
-									<h3>Service #2</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-3" href="http://codyhouse.co/?p=748">
-									<h3>Service #3</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-4" href="http://codyhouse.co/?p=748">
-									<h3>Service #4</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-5" href="http://codyhouse.co/?p=748">
-									<h3>Service #5</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-6" href="http://codyhouse.co/?p=748">
-									<h3>Service #6</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-7" href="http://codyhouse.co/?p=748">
-									<h3>Service #7</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-8" href="http://codyhouse.co/?p=748">
-									<h3>Service #8</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-9" href="http://codyhouse.co/?p=748">
-									<h3>Service #9</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-10" href="http://codyhouse.co/?p=748">
-									<h3>Service #10</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-11" href="http://codyhouse.co/?p=748">
-									<h3>Service #11</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
-							<li>
-								<a class="cd-dropdown-item item-12" href="http://codyhouse.co/?p=748">
-									<h3>Service #12</h3>
-									<p>This is the item description</p>
-								</a>
-							</li>
-
 						</ul> <!-- .cd-dropdown-icons -->
 					</li> <!-- .has-children -->
 
-					<li class="cd-divider">Divider</li>
+					<!--
+					<li class="cd-divider"><%- __('Marginal Information') %></li>
+					-->
 
-					<li><a href="http://codyhouse.co/?p=748">Page 1</a></li>
-					<li><a href="http://codyhouse.co/?p=748">Page 2</a></li>
+					<li><a href="<%- contextPath %>/<%- resourceSlugs['disclaimer'] %>"><%- __('Disclaimer') %></a></li>
+					<li><a href="<%- contextPath %>/<%- resourceSlugs['aboutus'] %>"><%- __('About Us') %></a></li>
 				</ul> <!-- .cd-dropdown-content -->
 			</nav> <!-- .cd-dropdown -->
 		</div> <!-- .cd-dropdown-wrapper -->
+		<% if (req.user) { %>
+		<div class="cd-right-menu">
+			<a class="cd-right-button" href="/logout"><em><%- req.user.username %></em> (Logout)</a>
+		</div> <!-- .cd-right-menu -->
+		<% } %>
 	</header>

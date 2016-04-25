@@ -1,0 +1,17 @@
+
+html, body {
+    padding: 0px;
+    margin: 0px;
+}
+.tl-timeline {
+    
+}
+.tl-slide .tl-slide-content-container,
+.tl-slide .tl-slide-content-container .tl-slide-content,
+.tl-slide .tl-slide-content-container .tl-slide-content .tl-text {
+    vertical-align: top;
+}
+
+div#timeline {
+	height: 600px;
+}

@@ -15,7 +15,18 @@
 <%- include('../partials/header.ejs') %>
 
 	<main class="cd-main-content">
-	
+	<h1><%- figure.name %></h1>
+	<div><%- figure.description %></div>
+	<img src="/filestore/picture/<%- figure.picture %>/600/450">
+	<% if (figure.events && figure.events.length > 0) { %>
+	<hr/>
+	<h1>Events</h1>
+	<ul>
+		<% figure.events.forEach(function(event) { %>
+		<li><%- JSON.stringify(event) %></li>
+		<% }) %>
+	</ul>
+	<% } %>
 	</main>
 
 <%- include('../partials/header.script.ejs') %>

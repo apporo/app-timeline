@@ -1,22 +1,46 @@
 <!doctype html>
 <html lang="en" class="no-js">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <%- include('../partials/header.style.ejs') %>
+    <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/basic.css">
+    <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/gridview.css">
+    <title><%- __('Historical Figures') %> | <%- __('HISTORICAL TIMELINE') %></title>
+  </head>
 
-	<link rel="stylesheet" href="<%- contextPath %>/assets/vtimeline/css/style.css"> <!-- Resource style -->
-	<script src="<%- contextPath %>/assets/vtimeline/js/modernizr.js"></script> <!-- Modernizr -->
-  	
-	<title><%- __('Historical Figures') %> | <%- __('HISTORICAL TIMELINE') %></title>
-</head>
-<body>
+  <body>
 <%- include('../partials/header.ejs') %>
-
-	<main class="cd-main-content">
-	</main>
-
+  <main class="timeline-main">
+  <h1><%- __('Historical Figures') %></h1>
+  <section id="library" class="has-padding">
+    <div class="cd-container">
+      <% if (figures && figures.length > 0) { %>
+      <ul class="items-gallery">
+        <% figures.forEach(function(figure) { %>
+        <li>
+          <div class="item-img">
+            <a href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>">
+              <img src="/filestore/picture/<%- figure.picture %>/253/170/preview.jpg" alt="<%- figure.name %>">
+            </a>
+          </div>
+          <div class="item-info dark-bg" style="background-color: #3d3536">
+            <a href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>"><em><%- figure.name %></em></a>
+            <% if (figure.start_date) { %><%- figure.start_date %><% } %>
+            <% if (figure.periodName) { %>
+            <i class="date"><a href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- figure.periodSlug %>"><%- figure.periodName %></a></i>
+            <% } %>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
+      <% } %>
+    </div>
+  </section>
+  </main>
 <%- include('../partials/header.script.ejs') %>
-</body>
+  <script src="<%- contextPath %>/assets/gridview/js/main.js"></script>
+  </body>
 </html>

@@ -1,22 +1,48 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <%- include('../partials/header.style.ejs') %>
+    <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/basic.css">
+    <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/gridview.css">
+    <title><%- __('Historical Facts') %> | <%- __('HISTORICAL TIMELINE') %></title>
+  </head>
 
-	<link rel="stylesheet" href="<%- contextPath %>/assets/vtimeline/css/style.css"> <!-- Resource style -->
-	<script src="<%- contextPath %>/assets/vtimeline/js/modernizr.js"></script> <!-- Modernizr -->
-  	
-	<title><%- __('Historical Facts') %> | <%- __('HISTORICAL TIMELINE') %></title>
-</head>
-<body>
+  <body>
 <%- include('../partials/header.ejs') %>
 
-	<main class="cd-main-content">
-	</main>
+  <main class="timeline-main">
+    <h1><%- __('Historical Facts') %></h1>
+    <section id="library" class="has-padding">
+      <div class="cd-container">
+        <% if (facts && facts.length > 0) { %>
+        <ul class="items-gallery">
+          <% facts.forEach(function(fact) { %>
+          <li>
+            <div class="item-img">
+              <a href="<%- contextPath %>/<%- resourceSlugs['fact'] %>/<%- fact.slug %>">
+                <img src="/filestore/picture/<%- fact.picture %>/253/170/preview.jpg" alt="<%- fact.name %>">
+              </a>
+            </div>
+            <div class="item-info dark-bg" style="background-color: #3d3536">
+              <a href="<%- contextPath %>/<%- resourceSlugs['fact'] %>/<%- fact.slug %>"><em><%- fact.name %></em></a>
+              <% if (fact.start_date) { %><%- fact.start_date %><% } %>
+              <% if (fact.periodName) { %>
+              <i class="date"><a href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- fact.periodSlug %>"><%- fact.periodName %></a></i>
+              <% } %>
+            </div>
+          </li>
+          <% }) %>
+        </ul>
+        <% } %>
+      </div>
+    </section>
+  </main>
 
 <%- include('../partials/header.script.ejs') %>
-</body>
+  <script src="<%- contextPath %>/assets/gridview/js/main.js"></script>
+  </body>
 </html>
