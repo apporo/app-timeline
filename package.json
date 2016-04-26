@@ -23,6 +23,7 @@
   "peerDependencies": {
     "app-filestore": "^0.0.1",
     "app-localization": "^0.0.1",
+    "app-webfonts": "^0.0.1",
     "app-webserver": "^0.0.5",
     "devebot": "^0.1.20",
     "devebot-co-mongoose": "^0.0.1"
@@ -30,6 +31,7 @@
   "dependencies": {
     "app-filestore": "^0.0.1",
     "app-localization": "^0.0.1",
+    "app-webfonts": "^0.0.1",
     "app-webserver": "^0.0.5",
     "devebot": "^0.1.20",
     "devebot-co-mongoose": "^0.0.1"
