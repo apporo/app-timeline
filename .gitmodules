@@ -1,0 +1,3 @@
+[submodule "megamenu"]
+	path = public/assets/megamenu
+	url = https://github.com/comker/mega-dropdown.git
