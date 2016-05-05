@@ -1,3 +1,8 @@
 [submodule "megamenu"]
 	path = public/assets/megamenu
 	url = https://github.com/comker/mega-dropdown.git
+	branch = acegik
+[submodule "slideshow"]
+	path = public/assets/slideshow
+	url = https://github.com/comker/vertical-fixed-navigation-2.git
+	branch = acegik
