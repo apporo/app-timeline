@@ -51,11 +51,23 @@
 		<% if (period.figures && period.figures.length > 0) { %>
 		<section id="colors" class="tl-gridview">
 			<h2><%- __('Historical Figure') %></h2>
-			<ul>
-				<% period.figures.forEach(function(figure) { %>
-				<li><a href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>"><%- figure.name %></a></li>
-				<% }) %>
-			</ul>
+			<ul class="items-gallery">
+		        <% period.figures.forEach(function(figure) { %>
+		        <li>
+		          <div class="item-img">
+		            <a href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>">
+		              <img src="/filestore/picture/<%- figure.picture %>/253/170/preview.jpg" alt="<%- figure.name %>">
+		            </a>
+		          </div>
+		          <div class="item-info dark-bg" style="background-color: #3d3536">
+		            <a href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>"><em><%- figure.name %></em></a>
+		            <% if (figure.periodName) { %>
+		            <i class="date"><a href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- figure.periodSlug %>"><%- figure.periodName %></a></i>
+		            <% } %>
+		          </div>
+		        </li>
+		        <% }) %>
+		    </ul>
 		</section>
 		<% } %>
 

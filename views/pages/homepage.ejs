@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='/webfonts/assets/VNF-ChampionScriptPro/styles.css' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="<%- contextPath %>/assets/slideshow/css/reset.css"> <!-- CSS reset -->
   <link rel="stylesheet" href="<%- contextPath %>/assets/slideshow/css/style.css">
   <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/gridview.css">
   <script src="<%- contextPath %>/assets/slideshow/js/modernizr.js"></script> <!-- Modernizr -->
   <title><%- __('Homepage') %> | <%- __('HISTORICAL TIMELINE') %></title>
+  <style>
+    #section1 h1 {
+      font-size: 6.0rem;
+      font-family: "VNF-ChampionScriptPro", "Sintony", sans-serif;
+      text-transform: none;
+    }
+  </style>
 </head>
 <body>
 <nav class="cd-vertical-nav">
@@ -16,7 +24,7 @@
     <li><a href="#section1" class="active"><span class="label"><%- __('Introduction') %></span></a></li>
     <li><a href="#section2"><span class="label"><%- __('Historical Fact') %></span></a></li>
     <li><a href="#section3"><span class="label"><%- __('Historical Figure') %></span></a></li>
-    <li><a href="#section4"><span class="label"><%- __('Statistics') %></span></a></li>
+    <!-- <li><a href="#section4"><span class="label"><%- __('Statistics') %></span></a></li> -->
   </ul>
 </nav><!-- .cd-vertical-nav -->
 
@@ -24,7 +32,7 @@
 
 <section id="section1" class="cd-section">
   <div class="content-wrapper">
-    <h1><%- __('History Timeline') %></h1>
+    <h1><a href="<%- contextPath %>/<%- resourceSlugs['periods'] %>">Trang sử Việt: Theo dòng lịch sử</a></h1>
     <a href="#section2" class="cd-scroll-down cd-image-replace">scroll down</a>
   </div>
 </section><!-- cd-section -->
@@ -85,12 +93,13 @@
   </div>
 </section><!-- cd-section -->
 
-<section id="section4" class="cd-section">
+<!-- <section id="section4" class="cd-section">
   <div class="content-wrapper">
     <h2><%- __('Statistics') %></h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto numquam, totam iusto officia earum perferendis, culpa ad atque eveniet praesentium nobis expedita similique beatae tenetur. Distinctio vel tenetur, id cum.</p>
   </div>
-</section><!-- cd-section -->
+</section> -->
+<!-- cd-section -->
   
 <script src="<%- contextPath %>/assets/slideshow/js/jquery-2.1.4.js"></script>
 <script src="<%- contextPath %>/assets/slideshow/js/main.js"></script> <!-- Resource jQuery -->
