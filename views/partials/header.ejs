@@ -36,7 +36,11 @@
 							<li>
 								<a class="cd-dropdown-item item-1" href="<%- contextPath %>/<%- resourceSlugs['fact'] %>/<%- fact.slug %>">
 									<h3><%- fact.name %></h3>
-									<p><%- fact.description %></p>
+									<% if (fact.periodName) { %>
+										<p><%- __('Historical Period') %>: <%- fact.periodName %></p>
+									<% } else { %>
+										<p><%- fact.description %></p>
+									<% } %>
 								</a>
 							</li>
 							<% }); %>
@@ -50,9 +54,13 @@
 							<li class="see-all"><a href="<%- contextPath %>/<%- resourceSlugs['figures'] %>"><%- __('Browse all figures') %></a></li>
 							<% navigation.figures.forEach(function(figure) { %>
 							<li>
-								<a class="cd-dropdown-item item-1" href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>">
+								<a class="cd-dropdown-item item-3" href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>">
 									<h3><%- figure.name %></h3>
-									<p><%- figure.description %></p>
+									<% if (figure.periodName) { %>
+										<p><%- __('Historical Period') %>: <%- figure.periodName %></p>
+									<% } else { %>
+										<p><%- figure.description %></p>
+									<% } %>
 								</a>
 							</li>
 							<% }); %>
