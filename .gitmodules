@@ -6,3 +6,7 @@
 	path = public/assets/slideshow
 	url = https://github.com/comker/vertical-fixed-navigation-2.git
 	branch = acegik
+[submodule "timeflowjs"]
+	path = public/assets/timeflowjs
+	url = https://github.com/comker/vertical-timeline.git
+	branch = acegik
