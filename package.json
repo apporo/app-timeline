@@ -1,6 +1,6 @@
 {
   "name": "app-timeline",
-  "version": "0.1.3-alpha.4",
+  "version": "0.1.3-alpha.5",
   "description": "Devebot application timeline layerware",
   "main": "index.js",
   "scripts": {
