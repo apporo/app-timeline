@@ -15,12 +15,11 @@ module.exports = {
       contextPath: '/timeline',
       paginationEnabled: true,
       resources: {
-        periods: {
-          slug: 'thoi-ky-lich-su',
-          menuSubItemCount: 4
-        },
         period: {
-          slug: 'thoi-ky',
+          slug: {
+            listpage: 'periods',
+            itempage: 'period'
+          },
           thumbnail: {
             frontend: {
               menuitem: {
@@ -36,7 +35,8 @@ module.exports = {
                 height: 450
               }
             }
-          }
+          },
+          menuSubItemCount: 4
         },
         event: {
           thumbnail: {
@@ -52,13 +52,31 @@ module.exports = {
             }
           }
         },
-        facts: {
-          slug: 'su-kien-lich-su',
+        fact: {
+          slug: {
+            listpage: 'facts',
+            itempage: 'fact'
+          },
+          thumbnail: {
+            frontend: {
+              listitem: {
+                width: 253,
+                height: 170
+              },
+              formview: {
+                width: 600,
+                height: 450
+              }
+            }
+          },
           menuSubItemCount: 6,
           itemsPerPage: 8
         },
-        fact: {
-          slug: 'su-kien',
+        figure: {
+          slug: {
+            listpage: 'figures',
+            itempage: 'figure'
+          },
           thumbnail: {
             frontend: {
               listitem: {
@@ -70,33 +88,15 @@ module.exports = {
                 height: 450
               }
             }
-          }
-        },
-        figures: {
-          slug: 'nhan-vat-lich-su',
+          },
           menuSubItemCount: 12,
           itemsPerPage: 8
         },
-        figure: {
-          slug: 'nhan-vat',
-          thumbnail: {
-            frontend: {
-              listitem: {
-                width: 253,
-                height: 170
-              },
-              formview: {
-                width: 600,
-                height: 450
-              }
-            }
-          }
-        },
         disclaimer: {
-          slug: 'phu-nhan-chung'
+          slug: 'disclaimer'
         },
         aboutus: {
-          slug: 've-chung-toi'
+          slug: 'aboutus'
         }
       }
     }

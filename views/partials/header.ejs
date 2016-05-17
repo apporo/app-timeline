@@ -7,14 +7,14 @@
         <ul class="cd-dropdown-content">
           <li><a href="<%- contextPath %>"><%- __('Homepage') %></a></li>
           <li class="has-children">
-            <a href="<%- contextPath %>/<%- resources['periods'].slug %>"><%- __('Historical Periods') %></a>
+            <a href="<%- contextPath %>/<%- resources['period'].slug.itempage %>"><%- __('Historical Periods') %></a>
 
             <ul class="cd-dropdown-gallery is-hidden">
               <li class="go-back"><a href="#0">Menu</a></li>
-              <li class="see-all"><a href="<%- contextPath %>/<%- resources['periods'].slug %>"><%- __('Browse all periods') %></a></li>
+              <li class="see-all"><a href="<%- contextPath %>/<%- resources['period'].slug.listpage %>"><%- __('Browse all periods') %></a></li>
               <% navigation.periods.forEach(function(period) { %>
               <li>
-                <a class="cd-dropdown-item" href="<%- contextPath %>/<%- resources['period'].slug %>/<%- period.slug %>">
+                <a class="cd-dropdown-item" href="<%- contextPath %>/<%- resources['period'].slug.itempage %>/<%- period.slug %>">
                   <% if (period.picture) { %>
                   <img src="<%- contextPath %>/../filestore/picture/<%- period.picture %>/<%- resources.period.thumbnail.frontend.menuitem.width %>/<%- resources.period.thumbnail.frontend.menuitem.height %>" alt="Period Image">
                   <% } else { %> 
@@ -28,13 +28,13 @@
           </li> <!-- .has-children -->
 
           <li class="has-children">
-            <a href="<%- contextPath %>/<%- resources['facts'].slug %>"><%- __('Historical Facts') %></a>
+            <a href="<%- contextPath %>/<%- resources['fact'].slug.listpage %>"><%- __('Historical Facts') %></a>
             <ul class="cd-dropdown-icons cd-dropdown-lines is-hidden">
               <li class="go-back"><a href="#0">Menu</a></li>
-              <li class="see-all"><a href="<%- contextPath %>/<%- resources['facts'].slug %>"><%- __('Browse all facts') %></a></li>
+              <li class="see-all"><a href="<%- contextPath %>/<%- resources['fact'].slug.listpage %>"><%- __('Browse all facts') %></a></li>
               <% navigation.facts.forEach(function(fact) { %>
               <li>
-                <a class="cd-dropdown-item item-1" href="<%- contextPath %>/<%- resources['fact'].slug %>/<%- fact.slug %>">
+                <a class="cd-dropdown-item item-1" href="<%- contextPath %>/<%- resources['fact'].slug.itempage %>/<%- fact.slug %>">
                   <h3><%- fact.name %></h3>
                   <% if (fact.periodName) { %>
                     <p><%- __('Historical Period') %>: <%- fact.periodName %></p>
@@ -48,13 +48,13 @@
           </li> <!-- .has-children -->
 
           <li class="has-children">
-            <a href="<%- contextPath %>/<%- resources['figures'].slug %>"><%- __('Historical Figures') %></a>
+            <a href="<%- contextPath %>/<%- resources['figure'].slug.listpage %>"><%- __('Historical Figures') %></a>
             <ul class="cd-dropdown-icons is-hidden">
               <li class="go-back"><a href="#0">Menu</a></li>
-              <li class="see-all"><a href="<%- contextPath %>/<%- resources['figures'].slug %>"><%- __('Browse all figures') %></a></li>
+              <li class="see-all"><a href="<%- contextPath %>/<%- resources['figure'].slug.listpage %>"><%- __('Browse all figures') %></a></li>
               <% navigation.figures.forEach(function(figure) { %>
               <li>
-                <a class="cd-dropdown-item item-3" href="<%- contextPath %>/<%- resources['figure'].slug %>/<%- figure.slug %>">
+                <a class="cd-dropdown-item item-3" href="<%- contextPath %>/<%- resources['figure'].slug.itempage %>/<%- figure.slug %>">
                   <h3><%- figure.name %></h3>
                   <% if (figure.periodName) { %>
                     <p><%- __('Historical Period') %>: <%- figure.periodName %></p>

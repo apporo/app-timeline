@@ -23,15 +23,15 @@
           <% figures.forEach(function(figure) { %>
           <li>
             <div class="item-img">
-              <a href="<%- contextPath %>/<%- resources['figure'].slug %>/<%- figure.slug %>">
+              <a href="<%- contextPath %>/<%- resources['figure'].slug.itempage %>/<%- figure.slug %>">
                 <img src="/filestore/picture/<%- figure.picture %>/<%- resources['figure'].thumbnail.frontend.listitem.width %>/<%- resources['figure'].thumbnail.frontend.listitem.height %>/preview.jpg" alt="<%- figure.name %>">
               </a>
             </div>
             <div class="item-info dark-bg" style="background-color: #7a9e6d">
-              <a href="<%- contextPath %>/<%- resources['figure'].slug %>/<%- figure.slug %>"><em><%- figure.name %></em></a>
+              <a href="<%- contextPath %>/<%- resources['figure'].slug.itempage %>/<%- figure.slug %>"><em><%- figure.name %></em></a>
               <% if (figure.start_date) { %><%- figure.start_date %><% } %>
               <% if (figure.periodName) { %>
-              <i class="date"><a href="<%- contextPath %>/<%- resources['period'].slug %>/<%- figure.periodSlug %>"><%- figure.periodName %></a></i>
+              <i class="date"><a href="<%- contextPath %>/<%- resources['period'].slug.itempage %>/<%- figure.periodSlug %>"><%- figure.periodName %></a></i>
               <% } %>
             </div>
           </li>

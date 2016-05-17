@@ -32,7 +32,7 @@
 
   <section id="section1" class="cd-section">
     <div class="content-wrapper">
-      <h1><a href="<%- contextPath %>/<%- resources['periods'].slug %>">Trang sử Việt: Theo dòng lịch sử</a></h1>
+      <h1><a href="<%- contextPath %>/<%- resources['period'].slug.itempage %>">Trang sử Việt: Theo dòng lịch sử</a></h1>
       <a href="#section2" class="cd-scroll-down cd-image-replace">scroll down</a>
     </div>
   </section><!-- cd-section -->
@@ -46,15 +46,15 @@
             <% latest.facts.forEach(function(fact) { %>
             <li>
               <div class="item-img">
-                <a href="<%- contextPath %>/<%- resources['fact'].slug %>/<%- fact.slug %>">
+                <a href="<%- contextPath %>/<%- resources['fact'].slug.itempage %>/<%- fact.slug %>">
                   <img src="/filestore/picture/<%- fact.picture %>/<%- resources['fact'].thumbnail.frontend.listitem.width %>/<%- resources['fact'].thumbnail.frontend.listitem.height %>/preview.jpg" alt="<%- fact.name %>">
                 </a>
               </div>
               <div class="item-info dark-bg" style="background-color: #3d3536">
-                <a href="<%- contextPath %>/<%- resources['fact'].slug %>/<%- fact.slug %>"><em><%- fact.name %></em></a>
+                <a href="<%- contextPath %>/<%- resources['fact'].slug.itempage %>/<%- fact.slug %>"><em><%- fact.name %></em></a>
                 <% if (fact.start_date) { %><%- fact.start_date %><% } %>
                 <% if (fact.periodName) { %>
-                <i class="date"><a href="<%- contextPath %>/<%- resources['period'].slug %>/<%- fact.periodSlug %>"><%- fact.periodName %></a></i>
+                <i class="date"><a href="<%- contextPath %>/<%- resources['period'].slug.itempage %>/<%- fact.periodSlug %>"><%- fact.periodName %></a></i>
                 <% } %>
               </div>
             </li>
@@ -74,15 +74,15 @@
             <% latest.figures.forEach(function(figure) { %>
             <li>
               <div class="item-img">
-                <a href="<%- contextPath %>/<%- resources['figure'].slug %>/<%- figure.slug %>">
+                <a href="<%- contextPath %>/<%- resources['figure'].slug.itempage %>/<%- figure.slug %>">
                   <img src="/filestore/picture/<%- figure.picture %>/<%- resources['figure'].thumbnail.frontend.listitem.width %>/<%- resources['figure'].thumbnail.frontend.listitem.height %>/preview.jpg" alt="<%- figure.name %>">
                 </a>
               </div>
               <div class="item-info dark-bg" style="background-color: #3d3536">
-                <a href="<%- contextPath %>/<%- resources['figure'].slug %>/<%- figure.slug %>"><em><%- figure.name %></em></a>
+                <a href="<%- contextPath %>/<%- resources['figure'].slug.itempage %>/<%- figure.slug %>"><em><%- figure.name %></em></a>
                 <% if (figure.start_date) { %><%- figure.start_date %><% } %>
                 <% if (figure.periodName) { %>
-                <i class="date"><a href="<%- contextPath %>/<%- resources['period'].slug %>/<%- figure.periodSlug %>"><%- figure.periodName %></a></i>
+                <i class="date"><a href="<%- contextPath %>/<%- resources['period'].slug.itempage %>/<%- figure.periodSlug %>"><%- figure.periodName %></a></i>
                 <% } %>
               </div>
             </li>
