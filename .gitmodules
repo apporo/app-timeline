@@ -10,3 +10,7 @@
 	path = public/assets/timeflowjs
 	url = https://github.com/comker/vertical-timeline.git
 	branch = acegik
+[submodule "pagination"]
+	path = public/assets/pagination
+	url = https://github.com/comker/pagination.git
+	branch = acegik

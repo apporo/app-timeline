@@ -1,35 +1,35 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <%- include('../partials/header.style.ejs') %>
-    <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/basic.css">
-    <title><%- __('Disclaimer') %> | <%- __('HISTORICAL TIMELINE') %></title>
-  </head>
+  <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/basic.css">
+  <title><%- __('Disclaimer') %> | <%- __('HISTORICAL TIMELINE') %></title>
+</head>
 
-  <body>
+<body>
 <%- include('../partials/header.ejs') %>
-    <main class="timeline-main cd-main-content">
-      <h1><%- data.disclaimer.title || __('Disclaimer') %></h1>
-      
-      <% if (data.disclaimer.summary) { %>
-      <section>
-        <%- data.disclaimer.summary || ''%>
-      </section>
-      <% } %>
+  <main class="timeline-main cd-main-content">
+    <h1><%- data.disclaimer.title || __('Disclaimer') %></h1>
+    
+    <% if (data.disclaimer.summary) { %>
+    <section>
+      <%- data.disclaimer.summary || ''%>
+    </section>
+    <% } %>
 
-      <% if (data.disclaimer.sections && typeof(data.disclaimer.sections) == 'array') { %>
-      <% data.disclaimer.sections.forEach(function(section) { %>
-      <section>
-        <h2><%- section.title %></h2>
-        <div><%- section.content %></div>
-      </section>>
-      <% }); %>
-      <% } %>
-    </main>
+    <% if (data.disclaimer.sections && typeof(data.disclaimer.sections) == 'array') { %>
+    <% data.disclaimer.sections.forEach(function(section) { %>
+    <section>
+      <h2><%- section.title %></h2>
+      <div><%- section.content %></div>
+    </section>>
+    <% }); %>
+    <% } %>
+  </main>
 <%- include('../partials/header.script.ejs') %>
-  </body>
+</body>
 </html>

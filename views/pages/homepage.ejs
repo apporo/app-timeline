@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="<%- contextPath %>/assets/slideshow/css/reset.css"> <!-- CSS reset -->
   <link rel="stylesheet" href="<%- contextPath %>/assets/slideshow/css/style.css">
   <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/gridview.css">
-  <script src="<%- contextPath %>/assets/slideshow/js/modernizr.js"></script> <!-- Modernizr -->
   <title><%- __('Homepage') %> | <%- __('HISTORICAL TIMELINE') %></title>
   <style>
     #section1 h1 {
@@ -18,90 +17,92 @@
     }
   </style>
 </head>
+
 <body>
-<nav class="cd-vertical-nav">
-  <ul>
-    <li><a href="#section1" class="active"><span class="label"><%- __('Introduction') %></span></a></li>
-    <li><a href="#section2"><span class="label"><%- __('Historical Fact') %></span></a></li>
-    <li><a href="#section3"><span class="label"><%- __('Historical Figure') %></span></a></li>
-    <!-- <li><a href="#section4"><span class="label"><%- __('Statistics') %></span></a></li> -->
-  </ul>
-</nav><!-- .cd-vertical-nav -->
+  <nav class="cd-vertical-nav">
+    <ul>
+      <li><a href="#section1" class="active"><span class="label"><%- __('Introduction') %></span></a></li>
+      <li><a href="#section2"><span class="label"><%- __('Historical Fact') %></span></a></li>
+      <li><a href="#section3"><span class="label"><%- __('Historical Figure') %></span></a></li>
+      <!-- <li><a href="#section4"><span class="label"><%- __('Statistics') %></span></a></li> -->
+    </ul>
+  </nav><!-- .cd-vertical-nav -->
 
-<button class="cd-nav-trigger cd-image-replace">Open navigation<span aria-hidden="true"></span></button>
+  <button class="cd-nav-trigger cd-image-replace">Open navigation<span aria-hidden="true"></span></button>
 
-<section id="section1" class="cd-section">
-  <div class="content-wrapper">
-    <h1><a href="<%- contextPath %>/<%- resourceSlugs['periods'] %>">Trang sử Việt: Theo dòng lịch sử</a></h1>
-    <a href="#section2" class="cd-scroll-down cd-image-replace">scroll down</a>
-  </div>
-</section><!-- cd-section -->
+  <section id="section1" class="cd-section">
+    <div class="content-wrapper">
+      <h1><a href="<%- contextPath %>/<%- resources['periods'].slug %>">Trang sử Việt: Theo dòng lịch sử</a></h1>
+      <a href="#section2" class="cd-scroll-down cd-image-replace">scroll down</a>
+    </div>
+  </section><!-- cd-section -->
 
-<section id="section2" class="cd-section">
-  <div class="content-wrapper">
-    <h2><%- __('Historical Facts') %></h2>
-      <div class="cd-container">
-        <% if (navigation.facts && navigation.facts.length > 0) { %>
-        <ul class="items-gallery">
-          <% navigation.facts.forEach(function(fact) { %>
-          <li>
-            <div class="item-img">
-              <a href="<%- contextPath %>/<%- resourceSlugs['fact'] %>/<%- fact.slug %>">
-                <img src="/filestore/picture/<%- fact.picture %>/253/170/preview.jpg" alt="<%- fact.name %>">
-              </a>
-            </div>
-            <div class="item-info dark-bg" style="background-color: #3d3536">
-              <a href="<%- contextPath %>/<%- resourceSlugs['fact'] %>/<%- fact.slug %>"><em><%- fact.name %></em></a>
-              <% if (fact.start_date) { %><%- fact.start_date %><% } %>
-              <% if (fact.periodName) { %>
-              <i class="date"><a href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- fact.periodSlug %>"><%- fact.periodName %></a></i>
-              <% } %>
-            </div>
-          </li>
-          <% }) %>
-        </ul>
-        <% } %>
-      </div>
-  </div>
-</section><!-- cd-section -->
+  <section id="section2" class="cd-section">
+    <div class="content-wrapper">
+      <h2><%- __('Historical Facts') %></h2>
+        <div class="cd-container">
+          <% if (latest.facts && latest.facts.length > 0) { %>
+          <ul class="items-gallery">
+            <% latest.facts.forEach(function(fact) { %>
+            <li>
+              <div class="item-img">
+                <a href="<%- contextPath %>/<%- resources['fact'].slug %>/<%- fact.slug %>">
+                  <img src="/filestore/picture/<%- fact.picture %>/<%- resources['fact'].thumbnail.frontend.listitem.width %>/<%- resources['fact'].thumbnail.frontend.listitem.height %>/preview.jpg" alt="<%- fact.name %>">
+                </a>
+              </div>
+              <div class="item-info dark-bg" style="background-color: #3d3536">
+                <a href="<%- contextPath %>/<%- resources['fact'].slug %>/<%- fact.slug %>"><em><%- fact.name %></em></a>
+                <% if (fact.start_date) { %><%- fact.start_date %><% } %>
+                <% if (fact.periodName) { %>
+                <i class="date"><a href="<%- contextPath %>/<%- resources['period'].slug %>/<%- fact.periodSlug %>"><%- fact.periodName %></a></i>
+                <% } %>
+              </div>
+            </li>
+            <% }) %>
+          </ul>
+          <% } %>
+        </div>
+    </div>
+  </section><!-- cd-section -->
 
-<section id="section3" class="cd-section">
-  <div class="content-wrapper">
-    <h2><%- __('Historical Figures') %></h2>
-      <div class="cd-container">
-        <% if (navigation.figures && navigation.figures.length > 0) { %>
-        <ul class="items-gallery">
-          <% navigation.figures.forEach(function(figure) { %>
-          <li>
-            <div class="item-img">
-              <a href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>">
-                <img src="/filestore/picture/<%- figure.picture %>/253/170/preview.jpg" alt="<%- figure.name %>">
-              </a>
-            </div>
-            <div class="item-info dark-bg" style="background-color: #3d3536">
-              <a href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>"><em><%- figure.name %></em></a>
-              <% if (figure.start_date) { %><%- figure.start_date %><% } %>
-              <% if (figure.periodName) { %>
-              <i class="date"><a href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- figure.periodSlug %>"><%- figure.periodName %></a></i>
-              <% } %>
-            </div>
-          </li>
-          <% }) %>
-        </ul>
-        <% } %>
-      </div>
-  </div>
-</section><!-- cd-section -->
+  <section id="section3" class="cd-section">
+    <div class="content-wrapper">
+      <h2><%- __('Historical Figures') %></h2>
+        <div class="cd-container">
+          <% if (latest.figures && latest.figures.length > 0) { %>
+          <ul class="items-gallery">
+            <% latest.figures.forEach(function(figure) { %>
+            <li>
+              <div class="item-img">
+                <a href="<%- contextPath %>/<%- resources['figure'].slug %>/<%- figure.slug %>">
+                  <img src="/filestore/picture/<%- figure.picture %>/<%- resources['figure'].thumbnail.frontend.listitem.width %>/<%- resources['figure'].thumbnail.frontend.listitem.height %>/preview.jpg" alt="<%- figure.name %>">
+                </a>
+              </div>
+              <div class="item-info dark-bg" style="background-color: #3d3536">
+                <a href="<%- contextPath %>/<%- resources['figure'].slug %>/<%- figure.slug %>"><em><%- figure.name %></em></a>
+                <% if (figure.start_date) { %><%- figure.start_date %><% } %>
+                <% if (figure.periodName) { %>
+                <i class="date"><a href="<%- contextPath %>/<%- resources['period'].slug %>/<%- figure.periodSlug %>"><%- figure.periodName %></a></i>
+                <% } %>
+              </div>
+            </li>
+            <% }) %>
+          </ul>
+          <% } %>
+        </div>
+    </div>
+  </section><!-- cd-section -->
 
-<!-- <section id="section4" class="cd-section">
-  <div class="content-wrapper">
-    <h2><%- __('Statistics') %></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto numquam, totam iusto officia earum perferendis, culpa ad atque eveniet praesentium nobis expedita similique beatae tenetur. Distinctio vel tenetur, id cum.</p>
-  </div>
-</section> -->
-<!-- cd-section -->
-  
-<script src="<%- contextPath %>/assets/slideshow/js/jquery-2.1.4.js"></script>
-<script src="<%- contextPath %>/assets/slideshow/js/main.js"></script> <!-- Resource jQuery -->
+  <!-- <section id="section4" class="cd-section">
+    <div class="content-wrapper">
+      <h2><%- __('Statistics') %></h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto numquam, totam iusto officia earum perferendis, culpa ad atque eveniet praesentium nobis expedita similique beatae tenetur. Distinctio vel tenetur, id cum.</p>
+    </div>
+  </section> -->
+  <!-- cd-section -->
+
+  <script src="<%- contextPath %>/assets/slideshow/js/modernizr.js"></script> <!-- Modernizr -->
+  <script src="<%- contextPath %>/assets/slideshow/js/jquery-2.1.4.js"></script>
+  <script src="<%- contextPath %>/assets/slideshow/js/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>

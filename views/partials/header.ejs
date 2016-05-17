@@ -1,84 +1,84 @@
-	<header>
-		<div class="cd-dropdown-wrapper">
-			<a class="cd-dropdown-trigger" href="#0"><%- __('HISTORICAL TIMELINE') %></a>
-			<nav class="cd-dropdown">
-				<h2><%- __('Menu Title') %></h2>
-				<a href="#0" class="cd-close"><%- __('Menu Close') %></a>
-				<ul class="cd-dropdown-content">
-					<li><a href="<%- contextPath %>"><%- __('Homepage') %></a></li>
-					<li class="has-children">
-						<a href="<%- contextPath %>/<%- resourceSlugs['periods'] %>"><%- __('Historical Periods') %></a>
+  <header>
+    <div class="cd-dropdown-wrapper">
+      <a class="cd-dropdown-trigger" href="#0"><%- __('HISTORICAL TIMELINE') %></a>
+      <nav class="cd-dropdown">
+        <h2><%- __('Menu Title') %></h2>
+        <a href="#0" class="cd-close"><%- __('Menu Close') %></a>
+        <ul class="cd-dropdown-content">
+          <li><a href="<%- contextPath %>"><%- __('Homepage') %></a></li>
+          <li class="has-children">
+            <a href="<%- contextPath %>/<%- resources['periods'].slug %>"><%- __('Historical Periods') %></a>
 
-						<ul class="cd-dropdown-gallery is-hidden">
-							<li class="go-back"><a href="#0">Menu</a></li>
-							<li class="see-all"><a href="<%- contextPath %>/<%- resourceSlugs['periods'] %>"><%- __('Browse all periods') %></a></li>
-							<% navigation.periods.forEach(function(period) { %>
-							<li>
-								<a class="cd-dropdown-item" href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- period.slug %>">
-									<% if (period.picture) { %>
-									<img src="<%- contextPath %>/../filestore/picture/<%- period.picture %>/<%- resources.period.thumbnail.menuitem.width %>/<%- resources.period.thumbnail.menuitem.height %>" alt="Period Image">
-									<% } else { %> 
-									<img src="<%- contextPath %>/assets/megamenu/img/img.png" alt="Period Image">
-									<% } %>
-									<h3><%- period.title %></h3>
-								</a>
-							</li>
-							<% }); %>
-						</ul> <!-- .cd-dropdown-gallery -->
-					</li> <!-- .has-children -->
+            <ul class="cd-dropdown-gallery is-hidden">
+              <li class="go-back"><a href="#0">Menu</a></li>
+              <li class="see-all"><a href="<%- contextPath %>/<%- resources['periods'].slug %>"><%- __('Browse all periods') %></a></li>
+              <% navigation.periods.forEach(function(period) { %>
+              <li>
+                <a class="cd-dropdown-item" href="<%- contextPath %>/<%- resources['period'].slug %>/<%- period.slug %>">
+                  <% if (period.picture) { %>
+                  <img src="<%- contextPath %>/../filestore/picture/<%- period.picture %>/<%- resources.period.thumbnail.frontend.menuitem.width %>/<%- resources.period.thumbnail.frontend.menuitem.height %>" alt="Period Image">
+                  <% } else { %> 
+                  <img src="<%- contextPath %>/assets/megamenu/img/img.png" alt="Period Image">
+                  <% } %>
+                  <h3><%- period.title %></h3>
+                </a>
+              </li>
+              <% }); %>
+            </ul> <!-- .cd-dropdown-gallery -->
+          </li> <!-- .has-children -->
 
-					<li class="has-children">
-						<a href="<%- contextPath %>/<%- resourceSlugs['facts'] %>"><%- __('Historical Facts') %></a>
-						<ul class="cd-dropdown-icons cd-dropdown-lines is-hidden">
-							<li class="go-back"><a href="#0">Menu</a></li>
-							<li class="see-all"><a href="<%- contextPath %>/<%- resourceSlugs['facts'] %>"><%- __('Browse all facts') %></a></li>
-							<% navigation.facts.forEach(function(fact) { %>
-							<li>
-								<a class="cd-dropdown-item item-1" href="<%- contextPath %>/<%- resourceSlugs['fact'] %>/<%- fact.slug %>">
-									<h3><%- fact.name %></h3>
-									<% if (fact.periodName) { %>
-										<p><%- __('Historical Period') %>: <%- fact.periodName %></p>
-									<% } else { %>
-										<p><%- fact.description %></p>
-									<% } %>
-								</a>
-							</li>
-							<% }); %>
-						</ul> <!-- .cd-dropdown-icons -->
-					</li> <!-- .has-children -->
+          <li class="has-children">
+            <a href="<%- contextPath %>/<%- resources['facts'].slug %>"><%- __('Historical Facts') %></a>
+            <ul class="cd-dropdown-icons cd-dropdown-lines is-hidden">
+              <li class="go-back"><a href="#0">Menu</a></li>
+              <li class="see-all"><a href="<%- contextPath %>/<%- resources['facts'].slug %>"><%- __('Browse all facts') %></a></li>
+              <% navigation.facts.forEach(function(fact) { %>
+              <li>
+                <a class="cd-dropdown-item item-1" href="<%- contextPath %>/<%- resources['fact'].slug %>/<%- fact.slug %>">
+                  <h3><%- fact.name %></h3>
+                  <% if (fact.periodName) { %>
+                    <p><%- __('Historical Period') %>: <%- fact.periodName %></p>
+                  <% } else { %>
+                    <p><%- fact.description %></p>
+                  <% } %>
+                </a>
+              </li>
+              <% }); %>
+            </ul> <!-- .cd-dropdown-icons -->
+          </li> <!-- .has-children -->
 
-					<li class="has-children">
-						<a href="<%- contextPath %>/<%- resourceSlugs['figures'] %>"><%- __('Historical Figures') %></a>
-						<ul class="cd-dropdown-icons is-hidden">
-							<li class="go-back"><a href="#0">Menu</a></li>
-							<li class="see-all"><a href="<%- contextPath %>/<%- resourceSlugs['figures'] %>"><%- __('Browse all figures') %></a></li>
-							<% navigation.figures.forEach(function(figure) { %>
-							<li>
-								<a class="cd-dropdown-item item-3" href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>">
-									<h3><%- figure.name %></h3>
-									<% if (figure.periodName) { %>
-										<p><%- __('Historical Period') %>: <%- figure.periodName %></p>
-									<% } else { %>
-										<p><%- figure.description %></p>
-									<% } %>
-								</a>
-							</li>
-							<% }); %>
-						</ul> <!-- .cd-dropdown-icons -->
-					</li> <!-- .has-children -->
+          <li class="has-children">
+            <a href="<%- contextPath %>/<%- resources['figures'].slug %>"><%- __('Historical Figures') %></a>
+            <ul class="cd-dropdown-icons is-hidden">
+              <li class="go-back"><a href="#0">Menu</a></li>
+              <li class="see-all"><a href="<%- contextPath %>/<%- resources['figures'].slug %>"><%- __('Browse all figures') %></a></li>
+              <% navigation.figures.forEach(function(figure) { %>
+              <li>
+                <a class="cd-dropdown-item item-3" href="<%- contextPath %>/<%- resources['figure'].slug %>/<%- figure.slug %>">
+                  <h3><%- figure.name %></h3>
+                  <% if (figure.periodName) { %>
+                    <p><%- __('Historical Period') %>: <%- figure.periodName %></p>
+                  <% } else { %>
+                    <p><%- figure.description %></p>
+                  <% } %>
+                </a>
+              </li>
+              <% }); %>
+            </ul> <!-- .cd-dropdown-icons -->
+          </li> <!-- .has-children -->
 
-					<!--
-					<li class="cd-divider"><%- __('Marginal Information') %></li>
-					-->
+          <!--
+          <li class="cd-divider"><%- __('Marginal Information') %></li>
+          -->
 
-					<li><a href="<%- contextPath %>/<%- resourceSlugs['disclaimer'] %>"><%- __('Disclaimer') %></a></li>
-					<li><a href="<%- contextPath %>/<%- resourceSlugs['aboutus'] %>"><%- __('About Us') %></a></li>
-				</ul> <!-- .cd-dropdown-content -->
-			</nav> <!-- .cd-dropdown -->
-		</div> <!-- .cd-dropdown-wrapper -->
-		<% if (req.user) { %>
-		<div class="cd-right-menu">
-			<a class="cd-right-button" href="/logout"><em><%- req.user.username %></em> (Logout)</a>
-		</div> <!-- .cd-right-menu -->
-		<% } %>
-	</header>
+          <li><a href="<%- contextPath %>/<%- resources['disclaimer'].slug %>"><%- __('Disclaimer') %></a></li>
+          <li><a href="<%- contextPath %>/<%- resources['aboutus'].slug %>"><%- __('About Us') %></a></li>
+        </ul> <!-- .cd-dropdown-content -->
+      </nav> <!-- .cd-dropdown -->
+    </div> <!-- .cd-dropdown-wrapper -->
+    <% if (req.user) { %>
+    <div class="cd-right-menu">
+      <a class="cd-right-button" href="/logout"><em><%- req.user.username %></em> (Logout)</a>
+    </div> <!-- .cd-right-menu -->
+    <% } %>
+  </header>

@@ -13,49 +13,90 @@ module.exports = {
   plugins: {
     appTimeline: {
       contextPath: '/timeline',
-      resourceSlugs: {
-        periods: 'thoi-ky-lich-su',
-        period: 'thoi-ky',
-        facts: 'su-kien-lich-su',
-        fact: 'su-kien',
-        figures: 'nhan-vat-lich-su',
-        figure: 'nhan-vat',
-        disclaimer: 'phu-nhan-chung',
-        aboutus: 've-chung-toi'
-      },
+      paginationEnabled: true,
       resources: {
         periods: {
-          slug: 'thoi-ky-lich-su'
+          slug: 'thoi-ky-lich-su',
+          menuSubItemCount: 4
         },
         period: {
           slug: 'thoi-ky',
           thumbnail: {
-            menuitem: {
-              width: 400,
-              height: 300
-            },
-            listview: {
-              width: 200,
-              height: 150
-            },
-            formview: {
-              width: 600,
-              height: 450
+            frontend: {
+              menuitem: {
+                width: 400,
+                height: 300
+              },
+              listview: {
+                width: 200,
+                height: 150
+              },
+              formview: {
+                width: 600,
+                height: 450
+              }
             }
-          },
-          menuSubItemCount: 4
+          }
+        },
+        event: {
+          thumbnail: {
+            frontend: {
+              listitem: {
+                width: 253,
+                height: 170
+              },
+              formview: {
+                width: 600,
+                height: 450
+              }
+            }
+          }
         },
         facts: {
-          slug: 'su-kien-lich-su'
+          slug: 'su-kien-lich-su',
+          menuSubItemCount: 6,
+          itemsPerPage: 8
         },
         fact: {
-          slug: 'su-kien'
+          slug: 'su-kien',
+          thumbnail: {
+            frontend: {
+              listitem: {
+                width: 253,
+                height: 170
+              },
+              formview: {
+                width: 600,
+                height: 450
+              }
+            }
+          }
         },
         figures: {
-          slug: 'nhan-vat-lich-su'
+          slug: 'nhan-vat-lich-su',
+          menuSubItemCount: 12,
+          itemsPerPage: 8
         },
         figure: {
-          slug: 'nhan-vat'
+          slug: 'nhan-vat',
+          thumbnail: {
+            frontend: {
+              listitem: {
+                width: 253,
+                height: 170
+              },
+              formview: {
+                width: 600,
+                height: 450
+              }
+            }
+          }
+        },
+        disclaimer: {
+          slug: 'phu-nhan-chung'
+        },
+        aboutus: {
+          slug: 've-chung-toi'
         }
       }
     }

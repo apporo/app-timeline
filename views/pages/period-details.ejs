@@ -1,77 +1,75 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <%- include('../partials/header.style.ejs') %>
-	<link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/basic.css">
-	<link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/itemview.css">
-	<link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/gridview.css">
-	<title><%- __('Historical Period') %>: <%- period.title %> | <%- __('HISTORICAL TIMELINE') %></title>
+  <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/basic.css">
+  <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/itemview.css">
+  <link rel="stylesheet" href="<%- contextPath %>/assets/layout/css/gridview.css">
+  <title><%- __('Historical Period') %>: <%- period.title %> | <%- __('HISTORICAL TIMELINE') %></title>
 </head>
 <body>
 <%- include('../partials/header.ejs') %>
+  <main class="timeline-main">
+    <h1><%- period.title %></h1>
+    <section id="branding" class="tl-itemview">
+      <h2><%- __('Overview') %></h2>
+      <ul>
+        <li class="cd-box"><img src="/filestore/picture/<%- period.picture %>/<%- resources['period'].thumbnail.frontend.formview.width %>/<%- resources['period'].thumbnail.frontend.formview.height %>"></li>
+        <li class="cd-box"><%- period.description %></li>
+      </ul>
+    </section>
 
-	<main class="timeline-main">
-		<h1><%- period.title %></h1>
-		<section id="branding" class="tl-itemview">
-			<h2><%- __('Overview') %></h2>
-			<ul>
-				<li class="cd-box"><img src="/filestore/picture/<%- period.picture %>/600/450"></li>
-				<li class="cd-box"><%- period.description %></li>
-			</ul>
-		</section>
+    <% if (period.facts && period.facts.length > 0) { %>
+    <section id="colors" class="tl-gridview">
+      <h2><%- __('Historical Fact') %></h2>
+      <ul class="items-gallery">
+        <% period.facts.forEach(function(fact) { %>
+        <li>
+          <div class="item-img">
+            <a href="<%- contextPath %>/<%- resources['fact'].slug %>/<%- fact.slug %>">
+              <img src="/filestore/picture/<%- fact.picture %>/<%- resources['fact'].thumbnail.frontend.listitem.width %>/<%- resources['fact'].thumbnail.frontend.listitem.height %>/preview.jpg" alt="<%- fact.name %>">
+            </a>
+          </div>
+          <div class="item-info dark-bg" style="background-color: #3d3536">
+            <a href="<%- contextPath %>/<%- resources['fact'].slug %>/<%- fact.slug %>"><em><%- fact.name %></em></a>
+            <% if (fact.start_date) { %><%- fact.start_date %><% } %>
+            <% if (fact.periodName) { %>
+            <i class="date"><a href="<%- contextPath %>/<%- resources['period'].slug %>/<%- fact.periodSlug %>"><%- fact.periodName %></a></i>
+            <% } %>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
+    <% } %>
 
-		<% if (period.facts && period.facts.length > 0) { %>
-		<section id="colors" class="tl-gridview">
-			<h2><%- __('Historical Fact') %></h2>
-			<ul class="items-gallery">
-		        <% period.facts.forEach(function(fact) { %>
-		        <li>
-		          <div class="item-img">
-		            <a href="<%- contextPath %>/<%- resourceSlugs['fact'] %>/<%- fact.slug %>">
-		              <img src="/filestore/picture/<%- fact.picture %>/253/170/preview.jpg" alt="<%- fact.name %>">
-		            </a>
-		          </div>
-		          <div class="item-info dark-bg" style="background-color: #3d3536">
-		            <a href="<%- contextPath %>/<%- resourceSlugs['fact'] %>/<%- fact.slug %>"><em><%- fact.name %></em></a>
-		            <% if (fact.start_date) { %><%- fact.start_date %><% } %>
-		            <% if (fact.periodName) { %>
-		            <i class="date"><a href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- fact.periodSlug %>"><%- fact.periodName %></a></i>
-		            <% } %>
-		          </div>
-		        </li>
-		        <% }) %>
-		    </ul>
-		</section>
-		<% } %>
-
-		<% if (period.figures && period.figures.length > 0) { %>
-		<section id="colors" class="tl-gridview">
-			<h2><%- __('Historical Figure') %></h2>
-			<ul class="items-gallery">
-		        <% period.figures.forEach(function(figure) { %>
-		        <li>
-		          <div class="item-img">
-		            <a href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>">
-		              <img src="/filestore/picture/<%- figure.picture %>/253/170/preview.jpg" alt="<%- figure.name %>">
-		            </a>
-		          </div>
-		          <div class="item-info dark-bg" style="background-color: #3d3536">
-		            <a href="<%- contextPath %>/<%- resourceSlugs['figure'] %>/<%- figure.slug %>"><em><%- figure.name %></em></a>
-		            <% if (figure.periodName) { %>
-		            <i class="date"><a href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- figure.periodSlug %>"><%- figure.periodName %></a></i>
-		            <% } %>
-		          </div>
-		        </li>
-		        <% }) %>
-		    </ul>
-		</section>
-		<% } %>
-
-	</main>
+    <% if (period.figures && period.figures.length > 0) { %>
+    <section id="colors" class="tl-gridview">
+      <h2><%- __('Historical Figure') %></h2>
+      <ul class="items-gallery">
+        <% period.figures.forEach(function(figure) { %>
+        <li>
+          <div class="item-img">
+            <a href="<%- contextPath %>/<%- resources['figure'].slug %>/<%- figure.slug %>">
+              <img src="/filestore/picture/<%- figure.picture %>/<%- resources['figure'].thumbnail.frontend.listitem.width %>/<%- resources['figure'].thumbnail.frontend.listitem.height %>/preview.jpg" alt="<%- figure.name %>">
+            </a>
+          </div>
+          <div class="item-info dark-bg" style="background-color: #3d3536">
+            <a href="<%- contextPath %>/<%- resources['figure'].slug %>/<%- figure.slug %>"><em><%- figure.name %></em></a>
+            <% if (figure.periodName) { %>
+            <i class="date"><a href="<%- contextPath %>/<%- resources['period'].slug %>/<%- figure.periodSlug %>"><%- figure.periodName %></a></i>
+            <% } %>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
+    <% } %>
+  </main>
 <%- include('../partials/header.script.ejs') %>
 </body>
 </html>

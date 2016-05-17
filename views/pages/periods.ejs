@@ -1,37 +1,36 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <%- include('../partials/header.style.ejs') %>
-	<link rel="stylesheet" href="<%- contextPath %>/assets/timeflowjs/css/style.css"> <!-- Resource style -->
-	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
-	<title><%- __('Historical Periods') %> | <%- __('HISTORICAL TIMELINE') %></title>
+  <link rel="stylesheet" href="<%- contextPath %>/assets/timeflowjs/css/style.css"> <!-- Resource style -->
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <title><%- __('Historical Periods') %> | <%- __('HISTORICAL TIMELINE') %></title>
 </head>
 <body>
 <%- include('../partials/header.ejs') %>
+  <main class="cd-main-content">
+    <section id="cd-timeline" class="cd-container">
+      <% periods.forEach(function(period) { %>
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture">
+          <img src="<%- contextPath %>/assets/timeflowjs/img/cd-icon-picture.svg" alt="Picture">
+        </div> <!-- cd-timeline-img -->
 
-	<main class="cd-main-content">
-	<section id="cd-timeline" class="cd-container">
-		<% periods.forEach(function(period) { %>
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-				<img src="<%- contextPath %>/assets/timeflowjs/img/cd-icon-picture.svg" alt="Picture">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2><%- period.title %></h2>
-				<p><%- period.description %></p>
-				<a href="<%- contextPath %>/<%- resourceSlugs['period'] %>/<%- period.slug %>" class="cd-read-more">Xem</a>
-				<span class="cd-date"><%- period.period %></span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-		<% }); %>
-	</section> <!-- cd-timeline -->
-	</main>
+        <div class="cd-timeline-content">
+          <h2><%- period.title %></h2>
+          <p><%- period.brief %></p>
+          <a href="<%- contextPath %>/<%- resources['period'].slug %>/<%- period.slug %>" class="cd-read-more">Xem</a>
+          <span class="cd-date"><%- period.period %></span>
+        </div> <!-- cd-timeline-content -->
+      </div> <!-- cd-timeline-block -->
+      <% }); %>
+    </section> <!-- cd-timeline -->
+  </main>
 <%- include('../partials/header.script.ejs') %>
-<script src="<%- contextPath %>/assets/timeflowjs/js/main.js"></script> <!-- Resource jQuery -->
+  <script src="<%- contextPath %>/assets/timeflowjs/js/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>
