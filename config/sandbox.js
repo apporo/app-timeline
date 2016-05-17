@@ -36,7 +36,8 @@ module.exports = {
               }
             }
           },
-          menuSubItemCount: 4
+          menuSubItemCount: 4,
+          slideshowItemCount: 0
         },
         event: {
           thumbnail: {
@@ -70,6 +71,7 @@ module.exports = {
             }
           },
           menuSubItemCount: 6,
+          slideshowItemCount: 8,
           itemsPerPage: 8
         },
         figure: {
@@ -90,6 +92,7 @@ module.exports = {
             }
           },
           menuSubItemCount: 12,
+          slideshowItemCount: 8,
           itemsPerPage: 8
         },
         disclaimer: {

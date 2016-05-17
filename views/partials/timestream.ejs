@@ -1,0 +1,33 @@
+<% if (latest.periods && latest.periods.length > 0) { %>
+  <div class="cd-horizontal-timeline">
+    <div class="timeline">
+      <div class="events-wrapper">
+        <div class="events">
+          <ol>
+            <% latest.periods.forEach(function(period, index) { %>
+            <li><a <%- (index==0)?'class="selected" ':'' %>href="#0" data-date="<%- '01/01/' + (2001 + index) %>"><%- period.period %></a></li>
+            <% }); %>
+          </ol>
+          <span class="filling-line" aria-hidden="true"></span>
+        </div> <!-- .events -->
+      </div> <!-- .events-wrapper -->
+        
+      <ul class="cd-timeline-navigation">
+        <li><a href="#0" class="prev inactive">Prev</a></li>
+        <li><a href="#0" class="next">Next</a></li>
+      </ul> <!-- .cd-timeline-navigation -->
+    </div> <!-- .timeline -->
+
+    <div class="events-content">
+      <ol>
+        <% latest.periods.forEach(function(period, index) { %>
+        <li <%- (index==0)?'class="selected" ':'' %>data-date="<%- '01/01/' + (2001 + index) %>">
+          <h2><a href="<%- contextPath %>/<%- resources['period'].slug.itempage %>/<%- period.slug %>"><%- period.title %></a></h2>
+          <em><%- period.period %></em>
+          <p><%- period.brief %></p>
+        </li>
+        <% }); %>
+      </ol>
+    </div> <!-- .events-content -->
+  </div>
+<% } %>

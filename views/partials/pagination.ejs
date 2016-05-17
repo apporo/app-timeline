@@ -2,11 +2,11 @@
       <% if (pagination.enabled && pagination.pageTotal > 0) { %>
       <nav role="navigation">
         <ul class="cd-pagination custom-buttons">
-          <li class="button"><a href="<%- contextPath %>/<%- resources[pagination.documentType].slug %>">Prev</a></li>
+          <li class="button"><a href="<%- contextPath %>/<%- resources[pagination.documentType].slug.listpage %>">Prev</a></li>
           <% for(var page=1; page<=pagination.pageTotal; page++) { %>
-          <li><a<%= (page == pagination.pageNumber) ? ' class="current"':'' %> href="<%- contextPath %>/<%- resources[pagination.documentType].slug %>/<%- page %>"><%- page %></a></li>
+          <li><a<%= (page == pagination.pageNumber) ? ' class="current"':'' %> href="<%- contextPath %>/<%- resources[pagination.documentType].slug.listpage %>/<%- page %>"><%- page %></a></li>
           <% } %>
-          <li class="button"><a href="<%- contextPath %>/<%- resources[pagination.documentType].slug %>/<%- pagination.pageTotal %>">Next</a></li>
+          <li class="button"><a href="<%- contextPath %>/<%- resources[pagination.documentType].slug.listpage %>/<%- pagination.pageTotal %>">Next</a></li>
         </ul>
       </nav>
       <% } %>

@@ -14,3 +14,7 @@
 	path = public/assets/pagination
 	url = https://github.com/comker/pagination.git
 	branch = acegik
+[submodule "timestream"]
+	path = public/assets/timestream
+	url = https://github.com/comker/horizontal-timeline.git
+	branch = acegik
