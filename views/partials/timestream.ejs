@@ -5,7 +5,7 @@
         <div class="events">
           <ol>
             <% latest.periods.forEach(function(period, index) { %>
-            <li><a <%- (index==0)?'class="selected" ':'' %>href="#0" data-date="<%- '01/01/' + (2001 + index) %>"><%- period.period %></a></li>
+            <li><a <%- (index == latest.currentPeriod)?'class="selected" ':'' %>href="#0" data-date="<%- '01/01/' + (2001 + index) %>"><%- period.period %></a></li>
             <% }); %>
           </ol>
           <span class="filling-line" aria-hidden="true"></span>
@@ -21,10 +21,10 @@
     <div class="events-content">
       <ol>
         <% latest.periods.forEach(function(period, index) { %>
-        <li <%- (index==0)?'class="selected" ':'' %>data-date="<%- '01/01/' + (2001 + index) %>">
+        <li <%- (index == latest.currentPeriod)?'class="selected" ':'' %>data-date="<%- '01/01/' + (2001 + index) %>">
           <h2><a href="<%- contextPath %>/<%- resources['period'].slug.itempage %>/<%- period.slug %>"><%- period.title %></a></h2>
           <em><%- period.period %></em>
-          <p><%- period.brief %></p>
+          <p><%- period.brief || period.description %></p>
         </li>
         <% }); %>
       </ol>
