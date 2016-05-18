@@ -24,6 +24,9 @@
       font-family: "VNF-ChampionScriptPro", "Sintony", sans-serif;
       text-transform: none;
     }
+    .cd-vertical-nav {
+      z-index: 1979;
+    }
     .cd-horizontal-timeline .events-wrapper::before {
       left: 0;
       background-image: -webkit-linear-gradient( left , #3a2c41, rgba(248, 248, 248, 0));
@@ -61,7 +64,7 @@
 
   <section id="section2" class="cd-section">
     <div class="content-wrapper">
-      <h2><a href="<%- contextPath %>/<%- resources['fact'].slug.listpage %>"><%- __('Historical Facts') %></a></h2>
+      <h2><a href="<%- contextPath %>/<%- resources['fact'].slug.listpage %>"><%- __('Latest Documents', __('Historical Facts')) %></a></h2>
       <div class="cd-container">
         <% if (latest.facts && latest.facts.length > 0) { %>
         <ul class="items-gallery">
@@ -89,7 +92,7 @@
 
   <section id="section3" class="cd-section">
     <div class="content-wrapper">
-      <h2><a href="<%- contextPath %>/<%- resources['figure'].slug.listpage %>"><%- __('Historical Figures') %></a></h2>
+      <h2><a href="<%- contextPath %>/<%- resources['figure'].slug.listpage %>"><%- __('Latest Documents', __('Historical Figures')) %></a></h2>
       <div class="cd-container">
         <% if (latest.figures && latest.figures.length > 0) { %>
         <ul class="items-gallery">
