@@ -18,3 +18,7 @@
 	path = public/assets/timestream
 	url = https://github.com/comker/horizontal-timeline.git
 	branch = acegik
+[submodule "tabbedbar"]
+	path = public/assets/tabbedbar
+	url = https://github.com/comker/responsive-tabbed-navigation.git
+	branch = acegik
