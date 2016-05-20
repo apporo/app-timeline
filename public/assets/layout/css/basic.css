@@ -9,6 +9,10 @@ xBasic style
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

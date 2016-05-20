@@ -95,11 +95,8 @@ module.exports = {
           slideshowItemCount: 8,
           itemsPerPage: 8
         },
-        disclaimer: {
-          slug: 'disclaimer'
-        },
-        aboutus: {
-          slug: 'aboutus'
+        otherinfo: {
+          slug: 'otherinfo'
         }
       }
     }
